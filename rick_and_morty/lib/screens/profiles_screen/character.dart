@@ -4,7 +4,7 @@ import 'package:rick_and_morty/theme/text_theme.dart';
 class Character extends StatelessWidget {
   final String avatar;
   final String name;
-  final String state;
+  final bool state;
   final String something;
 
   Character(
@@ -19,7 +19,7 @@ class Character extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         right: 16.0,
-        top: 18.0,
+        top: 10.0,
       ),
       child: Row(
         children: [
@@ -34,7 +34,7 @@ class Character extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                state,
+                state.toString(),
                 style: MainTextTheme.stateTextGreen,
               ),
               Text(

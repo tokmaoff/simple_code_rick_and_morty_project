@@ -12,11 +12,20 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 24.0),
+      padding: EdgeInsets.fromLTRB(12.0, 24.0, 12.0, 0),
       child: Container(
         child: TextField(
+          enabled: true,
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.fromLTRB(49.0, 36.0, 59.0, 12.0),
+            contentPadding: EdgeInsets.fromLTRB(49.0, 0, 59.0, 12.0),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(50.0),
+              borderSide: BorderSide(color: Colors.transparent),
+            ),
+            disabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(50.0),
+              borderSide: BorderSide(color: Colors.transparent),
+            ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(100.0),
               borderSide: BorderSide(color: Colors.transparent),

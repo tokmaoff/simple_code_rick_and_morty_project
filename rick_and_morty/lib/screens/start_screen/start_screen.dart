@@ -12,9 +12,7 @@ class StartScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Container(
-            height: 218.0,
-            width: 234.0,
+          Expanded(
             child: Image.asset(
               MainImages.rickTextPicture,
               fit: BoxFit.fill,
@@ -22,9 +20,7 @@ class StartScreen extends StatelessWidget {
           ),
           Stack(
             children: [
-              Container(
-                height: 192.0,
-                width: 270.0,
+              Expanded(
                 child: Image.asset(
                   MainImages.mortyTextPicture,
                   fit: BoxFit.fill,
@@ -34,8 +30,6 @@ class StartScreen extends StatelessWidget {
                 top: 5.0,
                 right: 128.0,
                 child: Container(
-                  height: 45.0,
-                  width: 47.0,
                   child: Image.asset(
                     MainImages.andTextPicture,
                     fit: BoxFit.fill,
@@ -44,13 +38,15 @@ class StartScreen extends StatelessWidget {
               ),
             ],
           ),
-          Container(
+          Expanded(
+            flex: 1,
             child: Image.asset(
               MainImages.rickPicture,
               fit: BoxFit.fill,
             ),
           ),
-          Container(
+          Expanded(
+            flex: 1,
             child: Image.asset(
               MainImages.mortyPicture,
               fit: BoxFit.fill,

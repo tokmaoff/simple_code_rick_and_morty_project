@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/resources/main_images.dart';
+import 'package:rick_and_morty/theme/color_theme.dart';
 
 import 'character.dart';
 
 final List<CharacterModel> charactersList = [
   CharacterModel(
-      'Рик Cанчез', 'живой', MainImages.character_1, 'Человек, Мужской'),
-  CharacterModel('Директор Агентства', 'живой', MainImages.character_2,
-      'Человек, Мужской'),
+      'Рик Cанчез', true, MainImages.character_1, 'Человек, Мужской'),
   CharacterModel(
-      'Морти Смит', 'живой', MainImages.character_3, 'Человек, Мужской'),
+      'Директор Агентства', true, MainImages.character_2, 'Человек, Мужской'),
   CharacterModel(
-      'Саммер Смит', 'живой', MainImages.character_4, 'Человек, Женский'),
-  CharacterModel('Альберт Эйнштейн', 'мёртвый', MainImages.character_5,
-      'Человек, Мужской'),
+      'Морти Смит', true, MainImages.character_3, 'Человек, Мужской'),
   CharacterModel(
-      'Алан Райлс', 'мёртвый', MainImages.character_6, 'Человек, Мужской'),
+      'Саммер Смит', true, MainImages.character_4, 'Человек, Женский'),
+  CharacterModel(
+      'Альберт Эйнштейн', false, MainImages.character_5, 'Человек, Мужской'),
+  CharacterModel(
+      'Алан Райлс', false, MainImages.character_6, 'Человек, Мужской'),
 ];
 
 class CharactersList extends StatelessWidget {
@@ -25,14 +26,25 @@ class CharactersList extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0, 16.0),
       child: Expanded(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('всего персонажей: 200'),
-                  IconButton(icon: Icon(Icons.grid_view), onPressed: () {}),
+                  Text(
+                    'всего персонажей: 200',
+                    style: TextStyle(
+                      color: ColorPallete.lightGray,
+                    ),
+                  ),
+                  IconButton(
+                      icon: Icon(
+                        Icons.grid_view,
+                        color: ColorPallete.lightGray,
+                      ),
+                      onPressed: () {}),
                 ],
               ),
             ),
@@ -64,7 +76,7 @@ class CharactersList extends StatelessWidget {
 
 class CharacterModel {
   final String name;
-  final String state;
+  final bool state;
   final String avatar;
   final String something;
 
